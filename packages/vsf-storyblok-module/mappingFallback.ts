@@ -6,7 +6,6 @@ import get from 'lodash-es/get'
 const route = {
   name: 'storyblok',
   params: {
-    // TODO: Why does this need to be here?
     slug: 'storyblok'
   }
 }

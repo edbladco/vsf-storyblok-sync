@@ -55,7 +55,7 @@ export default {
       return fullSlug
     },
     async fetchStory () {
-      const { id, fullSlug, spaceId, timestamp, token } = getStoryblokQueryParams(this.$route)
+      const { id, fullSlug, spaceId, timestamp, token, release } = getStoryblokQueryParams(this.$route)
 
       if (id && !this.storyblokPath) {
         const previewToken = await this.$store.dispatch(`${KEY}/getPreviewToken`, {
@@ -67,7 +67,8 @@ export default {
         if (previewToken) {
           return this.$store.dispatch(`${KEY}/loadDraftStory`, {
             id,
-            previewToken
+            previewToken,
+            release
           })
         }
       }
