@@ -15,7 +15,7 @@ import { getSettings } from '../helpers'
 function beforeRegistration (appConfig, store) {
   const settings = getSettings(appConfig.storyblok.settings)
   if (settings.addRoutes) {
-    setupMultistoreRoutes(appConfig, router, StoryblokRoutes)
+    setupMultistoreRoutes(appConfig, router, StoryblokRoutes, 15)
   }
   const storyblokClientConfig = {
     cache: {
